@@ -29,8 +29,8 @@ const Header = ({ onToggleSidebar }: HeaderProps) => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-card border-b border-border h-20">
-        <div className="flex items-center justify-between h-full px-4">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-card border-b border-border h-16 md:h-20">
+        <div className="flex items-center justify-between h-full px-3 sm:px-4">
           <div className="flex items-center gap-4">
             <button
               onClick={onToggleSidebar}
@@ -40,8 +40,8 @@ const Header = ({ onToggleSidebar }: HeaderProps) => {
             </button>
           </div>
 
-          <div className="ml-2">
-            <img src={rakebetLogo} alt="Rakebet" className="h-20 sm:h-24 md:h-28 -my-4" />
+          <div className="ml-2 flex items-center">
+            <img src={rakebetLogo} alt="Rakebet" className="h-12 sm:h-14 md:h-16 object-contain" />
           </div>
 
           <div className="flex-1 flex justify-center">

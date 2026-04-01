@@ -20,6 +20,7 @@ import Login from "./pages/Login.tsx";
 import Signup from "./pages/Signup.tsx";
 import Profile from "./pages/Profile.tsx";
 import Notifications from "./pages/Notifications.tsx";
+import Referral from "./pages/Referral.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -57,6 +58,7 @@ const App = () => {
                   <Route path="/limbo" element={<LimboPage />} />
                   <Route path="/plinko" element={<PlinkoPage />} />
                   <Route path="/keno" element={<KenoPage />} />
+                  <Route path="/referral" element={<Referral />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/signup" element={<Signup />} />
                   <Route path="/profile" element={<Profile />} />

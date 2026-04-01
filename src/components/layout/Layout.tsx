@@ -40,7 +40,7 @@ const Layout = ({ children }: LayoutProps) => {
       />
 
       <main
-        className={`relative z-10 pt-20 transition-all duration-200 pb-16 lg:pb-0
+        className={`relative z-10 pt-16 md:pt-20 transition-all duration-200 pb-16 lg:pb-0
           ${sidebarCollapsed ? "lg:ml-16" : "lg:ml-52"}
         `}
       >

@@ -88,6 +88,7 @@ const topNav = [
 ];
 
 const extraNav = [
+  { name: "Referral", icon: Gift, path: "/referral" },
   { name: "VIP", icon: Crown, badge: "EXCLUSIVE" },
   { name: "$25K Daily Race", icon: Trophy, badge: "15:12:39" },
   { name: "$100K Weekly Race", icon: Trophy, badge: "4d" },
@@ -200,29 +201,32 @@ const Sidebar = ({ isOpen, onClose, collapsed, onToggleCollapse }: SidebarProps)
           <div className="border-t border-border/50 my-3" />
 
           {/* Extra nav */}
-          {extraNav.map((item) => (
-            <button
-              key={item.name}
-              className={`w-full flex items-center gap-3 rounded-md transition-all duration-150 hover:bg-secondary/60 group
-                ${collapsed ? "justify-center p-2.5" : "px-3 py-2.5"}
-              `}
-            >
-              <item.icon size={20} className="text-muted-foreground shrink-0" />
-              {!collapsed && (
-                <>
-                  <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground flex-1 text-left">
-                    {item.name}
-                  </span>
-                  {item.badge && (
-                    <span className="text-[10px] font-semibold text-muted-foreground bg-secondary px-1.5 py-0.5 rounded-sm">
-                      {item.badge}
+          {extraNav.map((item) => {
+            const isActive = item.path ? location.pathname === item.path : false;
+            return (
+              <button
+                key={item.name}
+                onClick={() => { if (item.path) navigate(item.path); }}
+                className={`w-full flex items-center gap-3 rounded-md transition-all duration-150 hover:bg-secondary/60 group
+                  ${collapsed ? "justify-center p-2.5" : "px-3 py-2.5"}
+                `}
+              >
+                <item.icon size={20} className="text-muted-foreground shrink-0" />
+                {!collapsed && (
+                  <>
+                    <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground flex-1 text-left">
+                      {item.name}
                     </span>
-                  )}
-                </>
-              )}
-            </button>
-          ))}
-
+                    {item.badge && (
+                      <span className="text-[10px] font-semibold text-muted-foreground bg-secondary px-1.5 py-0.5 rounded-sm">
+                        {item.badge}
+                      </span>
+                    )}
+                  </>
+                )}
+              </button>
+            );
+          })}
           {/* Divider */}
           <div className="border-t border-border/50 my-3" />
 
