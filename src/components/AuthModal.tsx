@@ -6,7 +6,6 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/hooks/use-toast";
 import { registerWallet } from "@/lib/walletApi";
 import { supabase } from "@/lib/supabase";
-import crownImg from "@/assets/rakebet-crown.png";
 
 const AuthModal = () => {
   const [tab, setTab] = useState<"login" | "register">("register");
@@ -51,28 +50,13 @@ const AuthModal = () => {
   return (
     <Dialog open={true}>
       <DialogContent
-        className="max-w-[900px] w-[95vw] p-0 border-border/50 bg-card overflow-hidden gap-0 [&>button]:hidden"
+        className="max-w-md w-[95vw] p-0 border-border/50 bg-card overflow-hidden gap-0 [&>button]:hidden"
         onPointerDownOutside={(e) => e.preventDefault()}
         onEscapeKeyDown={(e) => e.preventDefault()}
       >
-        <div className="flex min-h-[520px]">
-          {/* Left panel — image */}
-          <div className="hidden md:flex w-1/2 relative flex-col overflow-hidden">
-            <div className="absolute inset-0">
-              <img
-                src={crownImg}
-                alt="Rakebet"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <p className="relative z-10 text-[11px] text-white/50 text-center leading-relaxed mt-auto p-4">
-              By accessing the site, I attest that I am at least 18 years old
-              and have read the Terms and Conditions
-            </p>
-          </div>
-
-          {/* Right panel — form */}
-          <div className="flex-1 flex flex-col p-8">
+        <div className="flex min-h-[520px] justify-center">
+          {/* Form panel - now centered */}
+          <div className="flex-1 max-w-md flex flex-col p-8">
             {/* Tabs */}
             <div className="flex gap-6 mb-8 border-b border-border/40">
               <button
@@ -147,7 +131,7 @@ const AuthModal = () => {
                 <Button type="submit" className="w-full h-11 mt-2 font-semibold" disabled={loading}>
                   {loading ? "Creating account…" : "Create Account"}
                 </Button>
-                <p className="text-[11px] text-muted-foreground/60 text-center mt-auto md:hidden">
+                <p className="text-[11px] text-muted-foreground/60 text-center mt-auto">
                   By accessing the site, I attest that I am at least 18 years old
                   and have read the Terms and Conditions
                 </p>
@@ -184,7 +168,7 @@ const AuthModal = () => {
                 <Button type="submit" className="w-full h-11 mt-2 font-semibold" disabled={loading}>
                   {loading ? "Signing in…" : "Sign In"}
                 </Button>
-                <p className="text-[11px] text-muted-foreground/60 text-center mt-auto md:hidden">
+                <p className="text-[11px] text-muted-foreground/60 text-center mt-auto">
                   By accessing the site, I attest that I am at least 18 years old
                   and have read the Terms and Conditions
                 </p>
