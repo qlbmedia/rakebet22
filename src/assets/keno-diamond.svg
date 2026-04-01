@@ -1,0 +1,42 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer diamond shape -->
+  <path d="M32 4L60 20L32 60L4 20L32 4Z" fill="url(#greenGradient)" stroke="#1a8a4a" stroke-width="2"/>
+  
+  <!-- Top facet -->
+  <path d="M32 4L60 20L32 28L4 20L32 4Z" fill="url(#lightGreenGradient)"/>
+  
+  <!-- Left facet -->
+  <path d="M4 20L32 28L32 60L4 20Z" fill="url(#leftGradient)"/>
+  
+  <!-- Right facet -->
+  <path d="M60 20L32 28L32 60L60 20Z" fill="url(#rightGradient)"/>
+  
+  <!-- Center highlight -->
+  <path d="M32 28L32 60" stroke="#4ade80" stroke-width="1" opacity="0.5"/>
+  <path d="M32 28L4 20" stroke="#4ade80" stroke-width="1" opacity="0.3"/>
+  <path d="M32 28L60 20" stroke="#4ade80" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="greenGradient" x1="32" y1="4" x2="32" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    
+    <linearGradient id="lightGreenGradient" x1="32" y1="4" x2="32" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#4ade80"/>
+    </linearGradient>
+    
+    <linearGradient id="leftGradient" x1="4" y1="20" x2="32" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+    
+    <linearGradient id="rightGradient" x1="60" y1="20" x2="32" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+  </defs>
+</svg>
